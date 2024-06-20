@@ -1,0 +1,147 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #6a88ba;
+    font-family: "Asap", sans-serif;
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    text-align: center;
+    overflow-x: hidden;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: max(4.5vw, 35px);
+    text-shadow: 4px 4px black;
+    z-index: 1;
+    margin-bottom: 10px;
+    padding-top: 12rem;
+    color: #fcfb96;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+h2{
+    font-size: max(4.5vw, 35px);
+    text-shadow: 4px 4px black;
+    margin-bottom: 12rem;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+#personal-message {
+    max-width: 90%;
+    font-size: 2.5dvw;
+    color: #f7e29c;
+    text-shadow: 2px 2px #000;
+    margin:auto;
+    animation: fadeIn 3s ease-in-out forwards;
+}   
+
+
+#surprise-message {
+    position: absolute;
+    top: 15%; /* Ajustado para que aparezca más arriba */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #f7e29c; /* Color dorado para mejor legibilidad */
+    font-size: clamp(1rem,2.5rem,5rem);
+    animation: slideIn 2s ease-in-out forwards;
+    text-shadow: 1px 2px #000;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.5) rotate(0deg); }
+    50% { opacity: 0.7; transform: scale(1.2) rotate(15deg); }
+    100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+h1, #personal-message {
+    transition: all 0.5s ease-in-out;
+}
+
+canvas {
+    position: fixed;
+}
+
+
+@media (max-width: 1200px){
+    
+    h1{
+        font-size: clamp(5vw, 7vw, 9vw);
+    }
+
+
+    #personal-message {
+        font-size: clamp(5vw, 7vw, 9vw);
+        position: absolute;
+        bottom: 12%;
+        left: 6%;
+    }
+
+    #surprise-message{
+        font-size: clamp(5vw, 7vw, 9vw);
+        width: 90%;
+        position: absolute;
+        top: 20%;
+        left: 50%;
+    }
+
+
+}
+
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: clamp(5vw, 7vw, 9vw);
+    }
+
+    #personal-message {
+        font-size: clamp(5vw, 7vw, 9vw);
+        position: absolute;
+        bottom: 12%;
+        left: 6%;
+    }
+
+    #surprise-message{
+        font-size: clamp(5vw, 7vw, 9vw);
+        width: 90%;
+        position: absolute;
+        top: 20%;
+        left: 50%;
+    }
+}
+
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: clamp(5dvw, 7dvw, 9dvw);
+    }
+
+    #personal-message {
+        font-size: 9vw;
+    }
+}
